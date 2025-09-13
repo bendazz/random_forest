@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penguin Random Forest Demo</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; background: #f8f9fa; }
+    h2 { margin-top: 2em; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 24px);
+      gap: 6px;
+      margin-bottom: 2em;
+    }
+    .circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .legend { display: flex; gap: 1em; margin-bottom: 1em; }
+    .legend-item { display: flex; align-items: center; gap: 0.4em; }
+    .legend-circle { width: 16px; height: 16px; border-radius: 50%; display: inline-block; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h1>Penguin Dataset Visualization</h1>
+  <div class="legend" id="legend"></div>
+  <label for="depthSelect"><b>Tree Depth:</b></label>
+  <select id="depthSelect">
+    <option value="unlimited">Unlimited (strong trees)</option>
+    <option value="shallow">Shallow (max depth 2, weak trees)</option>
+  </select>
+  <h2>Training Set</h2>
+  <div class="grid" id="trainGrid"></div>
+  <h2>Test Set</h2>
+  <div class="grid" id="testGrid"></div>
+  <h2>Random Forest Trees</h2>
+  <div id="forestGrid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;"></div>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
